@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Formulario de Contacto</title>
+  <style>
+    .form-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 10px;
+    }
+
+    .form-container input,
+    .form-container textarea {
+      width: 100%;
+      padding: 10px;
+    }
+
+    .form-container button {
+      padding: 10px 20px;
+    }
+
+    .error-message {
+      color: red;
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+    <div class="form-container">
+        <div>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+        <label for="telefono">Teléfono:</label>
+        <input type="text" id="telefono" name="telefono">
+        </div>
+        <div>
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje" rows="5"></textarea>
+        </div>
+    </div>
+    <button id="enviar">Enviar</button>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+        $("#enviar").click(function() {
+            // Validar que los campos no estén vacíos
+            var nombre = $("#nombre").val();
+            var email = $("#email").val();
+            var telefono = $("#telefono").val();
+            var mensaje = $("#mensaje").val();
+
+            $(".error-message").remove(); // Eliminar mensajes de error anteriores
+
+            if (nombre === "") {
+            $("<p class='error-message'>Por favor, ingrese su nombre.</p>").insertAfter("#nombre");
+            }
+            if (email === "") {
+            $("<p class='error-message'>Por favor, ingrese su email.</p>").insertAfter("#email");
+            }
+            if (telefono === "") {
+            $("<p class='error-message'>Por favor, ingrese su número de teléfono.</p>").insertAfter("#telefono");
+            } else if (!$.isNumeric(telefono)) {
+            $("<p class='error-message'>El número de teléfono debe contener solo dígitos.</p>").insertAfter("#telefono");
+            }
+            if (mensaje === "") {
+            $("<p class='error-message'>Por favor, ingrese un mensaje.</p>").insertAfter("#mensaje");
+            }
+
+            // Si no hay errores, enviar el formulario
+            if ($(".error-message").length === 0) {
+            // Aquí puedes realizar la acción de enviar el formulario
+            alert("Formulario enviado correctamente");
+            }
+        });
+        });
+    </script>
+</body>
+</html>

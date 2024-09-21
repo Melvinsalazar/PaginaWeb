@@ -1,0 +1,101 @@
+*{
+    font-family: sans-serif;
+}
+
+body{
+    background: linear-gradient(to right,  #E5E7E9, #ffffff);
+}
+
+/*----------------------------------------------*/
+
+.container{
+
+    display: grid;
+    grid-template-areas: 
+        'menu menu'
+        'cabecera cabecera'
+        'contenido contenido';
+    grid-template-columns: 50% 50%; /* indican el espaciado de las columnas */
+    grid-template-rows: 7% 10% auto;
+    grid-gap: 10px; /* Espacio entre las celdas */
+  
+}
+
+.logo{
+    /*centra el contenido */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 3%; /* espaciado del contenido dentro de la caja */
+
+}
+.logo img{
+    width: 30px;
+
+}
+
+
+.menu{
+
+    /* alineo el contenido del menu a la izquierda*/
+    display: flex;
+    flex-direction: column;
+    align-items: end; /* alineado contenido al final*/
+    justify-content: center; /* centrado en el eje vertical*/
+    padding-right: 2%; /* Espacio de separación del lado izquiedo*/
+}
+header{
+    grid-area: menu;
+    display: flex;
+    justify-content: space-between;
+    background-color: #17202A;
+    border-radius: 10px;
+    
+}
+.cabecera{
+        grid-area: cabecera;
+}
+.contenido{
+    grid-area: contenido;
+}
+
+
+
+.centrar_c{
+    display: flex;
+    flex-direction: column; /* indica la direccion del centrado */
+    justify-content: flex-end; /* centro en el final  */
+    align-items: center; /* centro el contenido en este caso la imagen en el eje vertical */
+    text-align: justify; /* centro el justifica el texto */
+
+    color: #283747; /* color del texto */
+    line-height: -20px;
+}
+
+/* CENTRA DE LAS NUEVE CAJAS*/
+.padre {
+    /* background-color: #1314148c;*/
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+}
+        
+.hijo {
+
+    display: flex;
+    /* centrado para las imagenes en el eje vertical*/
+    flex-direction: column;
+    justify-content: space-between;
+
+    /*  border: 4px solid yellowgreen; */
+
+    /* centrado para las imagenes en el eje horizontal*/
+    justify-content: center;
+    align-items: center;
+    }
+
+    .hijo img {
+    width: 100%;
+    /*Ancho de imagen */
+}	
+    

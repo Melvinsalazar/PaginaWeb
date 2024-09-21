@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/contacto.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Contáctanos</title>
+</head>
+<body class="body-fond">
+    <br>
+    <div class="container">
+        <br>
+        <!--inicio del menu con imagen-->
+        <header>
+            <div class="logo">
+                <img src="../media/Logo-XYZ.png">
+            </div>
+            <div class="menu">
+                <ul class="nav justify-content-end">
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="../home.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="servicios.html">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="portafolio.html">Portafolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="equipo.html">Equipo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-warning" href="contactanos.html">Contactos</a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <!--fin del menu con imagen-->
+        <br>
+        <div class="cabecera centrar_c">
+            <h2><b>CONTACTANOS</b></h2>
+            <p><i> Lorain ipsum dolor sit ainet consectetur.</i></p>
+        </div>
+
+
+                    <form class="form-container contenido1 color-text" action="contactanos.html" method="POST">
+                        <div>
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email">
+                        <label for="telefono">Teléfono:</label>
+                        <input type="text" id="telefono" name="telefono">
+                        </div>
+                        <div>
+                        <label for="mensaje">Mensaje:</label>
+                        <textarea id="mensaje" name="mensaje" rows="5"></textarea>
+                        </div>
+                    </form>
+                    <div class="btn-e">
+                        <button id="enviar" class="btn btn-warning">Enviar</button>
+                    </div>
+        <footer class=" color-text" >
+            <p>Copyrig ht © Your Website 2O21</p>
+            <div class="redes">
+                <img src="../media/twiter.png">
+                <img src="../media/facebook.png">
+                <img src="../media/linked.png">
+            </div>
+            <p>Privacy Policy Terms of Use</p>
+        </footer>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function() {
+            $("#enviar").click(function() {
+                // Validar que los campos no estén vacíos
+                var nombre = $("#nombre").val();
+                var email = $("#email").val();
+                var telefono = $("#telefono").val();
+                var mensaje = $("#mensaje").val();
+    
+                $(".error-message").remove(); // Eliminar mensajes de error anteriores
+    
+                if (nombre === "") {
+                $("<p class='error-message'>Por favor, ingrese su nombre.</p>").insertAfter("#nombre");
+                }
+                if (email === "") {
+                $("<p class='error-message'>Por favor, ingrese su email.</p>").insertAfter("#email");
+                }
+                if (telefono === "") {
+                $("<p class='error-message'>Por favor, ingrese su número de teléfono.</p>").insertAfter("#telefono");
+                } else if (!$.isNumeric(telefono)) {
+                $("<p class='error-message'>El número de teléfono debe contener solo dígitos.</p>").insertAfter("#telefono");
+                }
+                if (mensaje === "") {
+                $("<p class='error-message'>Por favor, ingrese un mensaje.</p>").insertAfter("#mensaje");
+                }
+    
+                // Si no hay errores, enviar el formulario
+                if ($(".error-message").length === 0) {
+                // Aquí puedes realizar la acción de enviar el formulario
+                alert("Formulario enviado correctamente");
+                }
+            });
+            });
+        </script>
+
+
+    </div><!--cierre de contenedor-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

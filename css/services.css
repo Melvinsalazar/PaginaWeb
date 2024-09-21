@@ -1,0 +1,90 @@
+*{
+    font-family: sans-serif;
+}
+
+
+/*----------------------------------------------*/
+
+.container{
+    display: grid;
+    grid-template-areas: 
+        'menu menu menu '
+        'cabecera cabecera cabecera'
+        'caja1 caja2 caja3'
+        'pie pie pie';
+    grid-template-columns: 33% 33% 34%; /* indican el espaciado de las columnas */
+    grid-template-rows: 10% 20% 60% 30%;
+    /* grid-gap: 10px;  Espacio entre las celdas */
+  
+}
+
+.logo{
+    /*centra el contenido */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 3%; /* espaciado del contenido dentro de la caja */
+
+}
+.logo img{
+    width: 30px;
+
+}
+
+
+.menu{
+
+    /* alineo el contenido del menu a la izquierda*/
+    display: flex;
+    flex-direction: column;
+    align-items: end; /* alineado contenido al final*/
+    justify-content: center; /* centrado en el eje vertical*/
+    padding-right: 2%; /* Espacio de separación del lado izquiedo*/
+}
+header{
+    grid-area: menu;
+    display: flex;
+    justify-content: space-between;
+    background-color: #17202A;
+    border-radius: 10px;
+    
+}
+.cabecera{
+    grid-area: cabecera;
+}
+
+.c1{
+    grid-area: caja1;
+    padding: 5%;
+}
+
+.c2{
+    grid-area: caja2;
+    padding: 5%;
+}
+
+.c3 {
+    grid-area: caja3;
+    padding: 5%;
+}
+
+footer{
+    grid-area: pie;
+}
+
+/* centrado de contenido*/
+.centrar_c{
+    display: flex;
+    flex-direction: column; /* indica la direccion del centrado */
+    justify-content: center; /* centro en horizontal */
+    align-items: center; /* centro el contenido en este caso la imagen en el eje vertical */
+    text-align: justify; /* centro el justifica el texto */
+
+    color: #283747; /* color del texto */
+    line-height: -20px;
+}
+
+.centrar_c img{
+    width: 50%;
+    height: auto;
+}

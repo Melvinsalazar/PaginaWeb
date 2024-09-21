@@ -1,0 +1,124 @@
+*{
+    font-family: sans-serif;
+    color: #283747; /* color del texto */
+}
+
+body{
+    background: linear-gradient(to right,  #E5E7E9, #ffffff);
+}
+
+/*----------------------------------------------*/
+
+.container{
+    display: grid;
+    grid-template-areas: 
+        'menu menu menu'
+        'cabecera cabecera cabecera'
+        'caja1 caja2 caja3'
+        'caja4 caja5 caja6'
+        'pie pie pie';
+    grid-template-columns: 33% 33% 34%; /* indican el espaciado de las columnas */
+    grid-template-rows: 6% 15% 35% 10% 10%;
+    /* grid-gap: 10px;  Espacio entre las celdas */
+  
+}
+
+.logo{
+    /*centra el contenido */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 3%; /* espaciado del contenido dentro de la caja */
+
+}
+.logo img{
+    width: 30px;
+
+}
+
+
+.menu{
+
+    /* alineo el contenido del menu a la izquierda*/
+    display: flex;
+    flex-direction: column;
+    align-items: end; /* alineado contenido al final*/
+    justify-content: center; /* centrado en el eje vertical*/
+    padding-right: 2%; /* Espacio de separación del lado izquiedo*/
+}
+header{
+    grid-area: menu;
+    display: flex;
+    justify-content: space-between;
+    background-color: #17202A;
+    border-radius: 10px;
+    
+}
+
+.cabecera{
+    grid-area: cabecera;
+}
+
+.c1{
+    grid-area: caja1;
+}
+
+.c2{
+    grid-area: caja2;
+}
+
+.c3 {
+    grid-area: caja3;
+}
+
+.c4 {
+    grid-area: caja4;
+}
+
+.c5 {
+    grid-area: caja5;
+}
+.c6 {
+    grid-area: caja6;
+}
+
+footer{
+    grid-area: pie;
+}
+
+/* centrado de contenido*/
+.centrar_c{
+    display: flex;
+    flex-direction: column; /* indica la direccion del centrado */
+    justify-content: flex-end; /* centro en el final  */
+    align-items: center; /* centro el contenido en este caso la imagen en el eje vertical */
+    text-align: justify; /* centro el justifica el texto */
+
+    color: #283747; /* color del texto */
+    line-height: -20px;
+}
+
+/*
+.centrar_c img{
+    width: 50%;
+    height: auto;
+}
+*/
+.img-bonita{
+    width: 50%;
+    height: auto;
+    border: 4px solid #273746; /* Ajusta el grosor y el color del borde según tus necesidades */
+    border-radius: 50%; /* Establece el radio del borde para que la imagen sea redonda */
+    overflow: hidden; /* Recorta cualquier contenido que se salga del radio */
+    object-fit: cover; /* Ajusta el tamaño y la posición de la imagen para que se ajuste dentro del contenedor circular */
+}
+.redes{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.redes img {
+    height: 30%;
+    width: auto;
+}
+
